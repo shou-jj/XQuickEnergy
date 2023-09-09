@@ -105,7 +105,7 @@ public class AntOcean {
                                 JSONObject retBubble = retBubbles.optJSONObject(j);
                                 if (retBubble != null) {
                                     int collectedEnergy = retBubble.getInt("collectedEnergy");
-                                    Log.forest("神奇海洋🐳收取[" + FriendIdMap.getNameById(userId) + "]的海洋能量#"
+                                    Log.forest("神奇海洋🐳收取【" + FriendIdMap.getNameById(userId) + "】的海洋能量#"
                                             + collectedEnergy + "g");
                                 }
                             }
@@ -162,7 +162,7 @@ public class AntOcean {
             if ("SUCCESS".equals(jo.getString("resultCode"))) {
                 JSONObject fishDetailVO = jo.getJSONObject("fishDetailVO");
                 String name = fishDetailVO.getString("name");
-                Log.forest("神奇海洋🐳集齐[" + name + "]拼图合成#[" + name + "]");
+                Log.forest("神奇海洋🐳集齐【" + name + "】拼图合成#【" + name + "】");
             } else {
                 Log.i(TAG, jo.getString("resultDesc"));
             }
@@ -179,7 +179,7 @@ public class AntOcean {
                 JSONArray attachReward = reward.getJSONArray("attachRewardBOList");
 
                 if (attachReward.length() > 0) {
-                    Log.forest("神奇海洋🐳[清理海域垃圾]获得#海洋伙伴线索拼图1块");
+                    Log.forest("神奇海洋🐳【清理海域垃圾】获得#海洋伙伴线索拼图1块");
                     boolean canCombine = true;
                     for (int j = 0; j < attachReward.length(); j++) {
                         JSONObject detail = attachReward.getJSONObject(j);
@@ -207,7 +207,7 @@ public class AntOcean {
                 String s = AntOceanRpcCall.collectReplicaAsset();
                 JSONObject jo = new JSONObject(s);
                 if ("SUCCESS".equals(jo.getString("resultCode"))) {
-                    Log.forest("神奇海洋🐳[学习海洋科普知识]#潘多拉能量+1");
+                    Log.forest("神奇海洋🐳【学习海洋科普知识】#潘多拉能量+1");
                 } else {
                     Log.i(TAG, jo.getString("resultDesc"));
                 }
@@ -224,7 +224,7 @@ public class AntOcean {
             JSONObject jo = new JSONObject(s);
             if ("SUCCESS".equals(jo.getString("resultCode"))) {
                 String name = jo.getJSONObject("currentPhaseInfo").getJSONObject("extInfo").getString("name");
-                Log.forest("神奇海洋🐳迎回[" + name + "]");
+                Log.forest("神奇海洋🐳迎回【" + name + "】");
             } else {
                 Log.i(TAG, jo.getString("resultDesc"));
             }
@@ -305,7 +305,7 @@ public class AntOcean {
                     s = AntOceanRpcCall.switchOceanChapter(dstChapterCode);
                     jo = new JSONObject(s);
                     if ("SUCCESS".equals(jo.getString("resultCode"))) {
-                        Log.forest("神奇海洋🐳切换到[" + dstChapterName + "]系列");
+                        Log.forest("神奇海洋🐳切换到【" + dstChapterName + "】系列");
                     } else {
                         Log.i(TAG, jo.getString("resultDesc"));
                     }
@@ -434,7 +434,7 @@ public class AntOcean {
                     jo = new JSONObject(AntOceanRpcCall.finishTask(sceneCode, taskType));
                     if (jo.getBoolean("success")) {
                         String taskTitle = bizInfo.optString("taskTitle", taskType);
-                        Log.forest("海洋任务🧾[" + taskTitle + "]");
+                        Log.forest("海洋任务🧾【" + taskTitle + "】");
                     } else {
                         Log.recordLog(jo.getString("desc"), jo.toString());
                     }
@@ -465,7 +465,7 @@ public class AntOcean {
                     if (jo.getBoolean("success")) {
                         String taskTitle = bizInfo.optString("taskTitle", taskType);
                         String taskDesc = bizInfo.optString("taskDesc", taskType);
-                        Log.forest("领取奖励🏆[" + taskTitle + "]#" + taskDesc);
+                        Log.forest("领取奖励🏆【" + taskTitle + "】#" + taskDesc);
                     } else {
                         Log.recordLog(jo.getString("desc"), jo.toString());
                     }
