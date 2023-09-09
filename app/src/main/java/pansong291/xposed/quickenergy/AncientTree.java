@@ -78,8 +78,8 @@ public class AncientTree {
                 try {
                     JSONObject jo = new JSONObject(s);
                     if (jo.getString("resultCode").equals("SUCCESS")) {
-                        Log.forest("保护古树🌳[" + cityName + "-" + districtName
-                                + "]#" + age + "年" + name + ",消耗能量" + protectExpense + "g");
+                        Log.forest("保护古树🌳【" + cityName + "-" + districtName
+                                + "】#" + age + "年" + name + ",消耗能量" + protectExpense + "g");
                     }
                 } catch (Throwable t) {
                     Log.i(TAG, "protect err:");
