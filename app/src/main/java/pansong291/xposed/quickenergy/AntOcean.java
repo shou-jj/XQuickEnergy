@@ -162,7 +162,7 @@ public class AntOcean {
             if ("SUCCESS".equals(jo.getString("resultCode"))) {
                 JSONObject fishDetailVO = jo.getJSONObject("fishDetailVO");
                 String name = fishDetailVO.getString("name");
-                Log.forest("神奇海洋🐳[" + name + "]合成成功");
+                Log.forest("神奇海洋🐳集齐[" + name + "]拼图合成#[" + name + "]");
             } else {
                 Log.i(TAG, jo.getString("resultDesc"));
             }
@@ -179,7 +179,7 @@ public class AntOcean {
                 JSONArray attachReward = reward.getJSONArray("attachRewardBOList");
 
                 if (attachReward.length() > 0) {
-                    Log.forest("神奇海洋🐳[获取碎片奖励]");
+                    Log.forest("神奇海洋🐳[清理海域垃圾]获得#海洋伙伴线索拼图1块");
                     boolean canCombine = true;
                     for (int j = 0; j < attachReward.length(); j++) {
                         JSONObject detail = attachReward.getJSONObject(j);
@@ -361,7 +361,7 @@ public class AntOcean {
                 if (homeTipsRefresh.optBoolean("fishCanBeCombined") || homeTipsRefresh.optBoolean("canBeRepaired")) {
                     querySeaAreaDetailList();
                 }
-                switchOceanChapter();
+                    switchOceanChapter();
             } else {
                 Log.i(TAG, jo.getString("resultDesc"));
             }
@@ -465,7 +465,7 @@ public class AntOcean {
                     if (jo.getBoolean("success")) {
                         String taskTitle = bizInfo.optString("taskTitle", taskType);
                         String taskDesc = bizInfo.optString("taskDesc", taskType);
-                        Log.forest("领取奖励🎖️[" + taskTitle + "]#" + taskDesc);
+                        Log.forest("领取奖励🏆[" + taskTitle + "]#" + taskDesc);
                     } else {
                         Log.recordLog(jo.getString("desc"), jo.toString());
                     }
