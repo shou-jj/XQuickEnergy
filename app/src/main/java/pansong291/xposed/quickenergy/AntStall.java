@@ -131,7 +131,7 @@ public class AntStall {
                         s = AntStallRpcCall.oneKeyInviteOpenShop(friendUserId, seatId);
                         jo = new JSONObject(s);
                         if ("SUCCESS".equals(jo.getString("resultCode"))) {
-                            Log.farm("蚂蚁新村🏡邀请【" + FriendIdMap.getNameById(friendUserId) + "】开店成功");
+                            Log.farm("蚂蚁新村🏡邀请【" + FriendIdMap.getNameById(friendUserId) + "】摆摊成功");
                             return;
                         }
                     }
