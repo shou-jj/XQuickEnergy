@@ -496,7 +496,7 @@ public class AntSports {
                             jo = rightsRuleList.getJSONObject(j);
                             award.append(jo.getString("rightsName")).append("*").append(jo.getInt("baseAwardCount"));
                         }
-                        Log.other("领取奖励🎖️[" + taskName + "]#" + award);
+                        Log.other("领取奖励🏆[" + taskName + "]#" + award);
                     } else {
                         Log.recordLog("文体中心领取奖励", jo.toString());
                     }
