@@ -66,7 +66,7 @@ public class AntOrchard {
         }.start();
     }
 
-    private static String【】 wuaList;
+    private static String[] wuaList;
 
     private static String getWua() {
         if (wuaList == null) {
@@ -74,11 +74,11 @@ public class AntOrchard {
                 String content = FileUtils.readFromFile(FileUtils.getWuaFile());
                 wuaList = content.split("\n");
             } catch (Throwable ignored) {
-                wuaList = new String【0】;
+                wuaList = new String[0];
             }
         }
         if (wuaList.length > 0) {
-            return wuaList【RandomUtils.nextInt(0, wuaList.length - 1)】;
+            return wuaList[RandomUtils.nextInt(0, wuaList.length - 1)];
         }
         return "null";
     }
