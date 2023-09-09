@@ -254,7 +254,7 @@ public class AntMember {
                 JSONObject jo = new JSONObject(AntMemberRpcCall.queryActivity());
                 if (jo.getBoolean("success")) {
                     String activityNo = jo.getString("activityNo");
-                    if (!Log.getFormatDate().replace("-","").equals(activityNo.split("_")【2】))
+                    if (!Log.getFormatDate().replace("-","").equals(activityNo.split("_")[2]))
                         break;
                     if ("SIGN_UP".equals(jo.getString("signUpStatus"))) {
                         Log.recordLog("开门打卡今日已报名！");
