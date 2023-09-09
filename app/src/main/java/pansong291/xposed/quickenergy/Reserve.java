@@ -102,11 +102,11 @@ public class Reserve {
                     if (currentEnergy >= jo.getInt("energy")) {
                         return true;
                     } else {
-                        Log.forest("领保护地⛳️[" + jo.getString("projectName") + "]#能量不足停止申请");
+                        Log.forest("领保护地⛳️【" + jo.getString("projectName") + "】#能量不足停止申请");
                         return false;
                     }
                 } else {
-                    Log.forest("领保护地⛳️[" + jo.getString("projectName") + "]#似乎没有了");
+                    Log.forest("领保护地⛳️【" + jo.getString("projectName") + "】#似乎没有了");
                     return false;
                 }
             } else {
@@ -133,13 +133,13 @@ public class Reserve {
                 if ("SUCCESS".equals(jo.getString("resultCode"))) {
                     int vitalityAmount = jo.optInt("vitalityAmount",0);
                     appliedTimes = Statistics.getReserveTimes(projectId) + 1;
-                    String str = "领保护地⛳️[" + itemName + "]#第" + appliedTimes + "次"
+                    String str = "领保护地⛳️【" + itemName + "】#第" + appliedTimes + "次"
                             + (vitalityAmount > 0 ? "-活力值+" + vitalityAmount : "");
                     Log.forest(str);
                     Statistics.reserveToday(projectId, 1);
                 } else {
                     Log.recordLog(jo.getString("resultDesc"), jo.toString());
-                    Log.forest("领保护地⛳️[" + itemName + "]#发生未知错误，停止申请");
+                    Log.forest("领保护地⛳️【" + itemName + "】#发生未知错误，停止申请");
                     //Statistics.reserveToday(projectId, count);
                     break;
                 }
@@ -226,11 +226,11 @@ public class Reserve {
                     if (currentEnergy >= jo.getInt("energy")) {
                         return true;
                     } else {
-                        Log.forest("净滩行动🏖️[" + jo.getString("cultivationName") + "]#能量不足停止申请");
+                        Log.forest("净滩行动🏖️【" + jo.getString("cultivationName") + "】#能量不足停止申请");
                         return false;
                     }
                 } else {
-                    Log.forest("净滩行动🏖️[" + jo.getString("cultivationName") + "]#似乎没有了");
+                    Log.forest("净滩行动🏖️【" + jo.getString("cultivationName") + "】#似乎没有了");
                     return false;
                 }
             } else {
@@ -262,13 +262,13 @@ public class Reserve {
                         award.append(jo.getString("name")).append("*").append(jo.getInt("num"));
                     }
                     appliedTimes = Statistics.getBeachTimes(cultivationCode) + 1;
-                    String str = "净滩行动🏖️[" + itemName + "]#第" + appliedTimes + "次"
+                    String str = "净滩行动🏖️【" + itemName + "】#第" + appliedTimes + "次"
                             + "-获得奖励" + award;
                     Log.forest(str);
                     Statistics.beachRecord(cultivationCode, 1);
                 } else {
                     Log.recordLog(jo.getString("resultDesc"), jo.toString());
-                    Log.forest("净滩行动🏖️[" + itemName + "]#发生未知错误，停止申请");
+                    Log.forest("净滩行动🏖️【" + itemName + "】#发生未知错误，停止申请");
                     //Statistics.beachToday(cultivationCode);
                     break;
                 }
