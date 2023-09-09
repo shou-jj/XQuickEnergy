@@ -349,7 +349,7 @@ public class AntSports {
             if ("SUCCESS".equals(jo.getString("resultCode"))) {
                 jo = jo.getJSONObject("dailyStepModel");
                 int produceQuantity = jo.getInt("produceQuantity");
-                int hour = Integer.parseInt(Log.getFormatTime().split(":")【0】);
+                int hour = Integer.parseInt(Log.getFormatTime().split(":")[0]);
                 if (produceQuantity >= Config.minExchangeCount() || hour >= Config.latestExchangeTime()) {
                     s = AntSportsRpcCall.walkDonateSignInfo(produceQuantity);
                     s = AntSportsRpcCall.donateWalkHome(produceQuantity);
