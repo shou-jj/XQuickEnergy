@@ -210,11 +210,11 @@ public class Statistics {
         sb.append(getData(TimeType.YEAR, DataType.COLLECTED));
         sb.append(",   帮 ").append(getData(TimeType.YEAR, DataType.HELPED));
         sb.append(",   浇 ").append(getData(TimeType.YEAR, DataType.WATERED));
-        sb.append("\n").append(getData(TimeType.MONTH, DataType.TIME)).append("月 : 收 ");
+        sb.append("\n\n").append(getData(TimeType.MONTH, DataType.TIME)).append("月 : 收 ");
         sb.append(getData(TimeType.MONTH, DataType.COLLECTED));
         sb.append(",   帮 ").append(getData(TimeType.MONTH, DataType.HELPED));
         sb.append(",   浇 ").append(getData(TimeType.MONTH, DataType.WATERED));
-        sb.append("\n").append(getData(TimeType.DAY, DataType.TIME)).append("日 : 收 ");
+        sb.append("\n\n").append(getData(TimeType.DAY, DataType.TIME)).append("日 : 收 ");
         sb.append(getData(TimeType.DAY, DataType.COLLECTED));
         sb.append(",   帮 ").append(getData(TimeType.DAY, DataType.HELPED));
         sb.append(",   浇 ").append(getData(TimeType.DAY, DataType.WATERED));
