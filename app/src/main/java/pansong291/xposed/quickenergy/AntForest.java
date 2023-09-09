@@ -1657,7 +1657,7 @@ public class AntForest {
                         XposedHelpers.callStaticMethod(
                                 loader.loadClass("com.alibaba.health.pedometer.intergation.rpc.RpcManager"),
                                 "a"),
-                        "a", new Object【】 { step, Boolean.FALSE, "system" });
+                        "a", new Object[] { step, Boolean.FALSE, "system" });
                 if (booleanValue) {
                     Log.other("同步步数👣【" + step + "步】");
                 } else {
