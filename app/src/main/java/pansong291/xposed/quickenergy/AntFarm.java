@@ -688,7 +688,7 @@ public class AntFarm {
                         jo = awardInfos.getJSONObject(i);
                         award.append(jo.getString("awardName")).append("*").append(jo.getInt("awardCount"));
                     }
-                    Log.farm("庄园游戏🎮【" + gameType.gameName() + "】获得#【" + award + "】");
+                    Log.farm("庄园游戏🎮玩【" + gameType.gameName() + "】获得#【" + award + "】");
                 } else {
                     Log.i(TAG, jo.toString());
                 }
