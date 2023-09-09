@@ -1126,7 +1126,7 @@ public class AntFarm {
                 animals[i].currentFarmId = animal.getString("currentFarmId");
                 animals[i].masterFarmId = animal.getString("masterFarmId");
                 animals[i].animalBuff = animal.getString("animalBuff");
-                animals[i.subAnimalType = animal.getString("subAnimalType");
+                animals[i].subAnimalType = animal.getString("subAnimalType");
                 JSONObject animalStatusVO = animal.getJSONObject("animalStatusVO");
                 animals[i].animalFeedStatus = animalStatusVO.getString("animalFeedStatus");
                 animals[i].animalInteractStatus = animalStatusVO.getString("animalInteractStatus");
