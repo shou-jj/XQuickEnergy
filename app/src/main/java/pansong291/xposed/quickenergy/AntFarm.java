@@ -18,11 +18,11 @@ public class AntFarm {
     public enum SendType {
         HIT, NORMAL;
 
-        public static final CharSequence【】 nickNames = { "攻击", "常规" };
-        public static final CharSequence【】 names = { HIT.nickName(), NORMAL.nickName() };
+        public static final CharSequence[] nickNames = { "攻击", "常规" };
+        public static final CharSequence[] names = { HIT.nickName(), NORMAL.nickName() };
 
         public CharSequence nickName() {
-            return nickNames【ordinal()】;
+            return nickNames[ordinal()];
         }
     }
 
@@ -45,20 +45,20 @@ public class AntFarm {
     public enum ToolType {
         STEALTOOL, ACCELERATETOOL, SHARETOOL, FENCETOOL, NEWEGGTOOL;
 
-        public static final CharSequence【】 nickNames = { "蹭饭卡", "加速卡", "救济卡", "篱笆卡", "新蛋卡" };
+        public static final CharSequence[] nickNames = { "蹭饭卡", "加速卡", "救济卡", "篱笆卡", "新蛋卡" };
 
         public CharSequence nickName() {
-            return nickNames【ordinal()】;
+            return nickNames[ordinal()];
         }
     }
 
     public enum GameType {
         starGame, jumpGame;
 
-        public static final CharSequence【】 gameNames = { "星星球", "登山赛" };
+        public static final CharSequence[] gameNames = { "星星球", "登山赛" };
 
         public CharSequence gameName() {
-            return gameNames【ordinal()】;
+            return gameNames[ordinal()];
         }
     }
 
@@ -86,17 +86,17 @@ public class AntFarm {
 
     private static String ownerFarmId;
     private static String userId;
-    private static Animal【】 animals;
+    private static Animal[] animals;
     private static Animal ownerAnimal;
     private static int foodStock;
     private static int foodStockLimit;
     private static String rewardProductNum;
-    private static RewardFriend【】 rewardList;
+    private static RewardFriend[] rewardList;
     private static double benevolenceScore;
     private static double harvestBenevolenceScore;
     private static int unreceiveTaskAward = 0;
 
-    private static FarmTool【】 farmTools;
+    private static FarmTool[] farmTools;
 
     private static final List<String> bizKeyList;
 
@@ -865,14 +865,14 @@ public class AntFarm {
             String memo = jo.getString("memo");
             if ("SUCCESS".equals(memo)) {
                 JSONArray jaToolList = jo.getJSONArray("toolList");
-                farmTools = new FarmTool【jaToolList.length()】;
+                farmTools = new FarmTool[jaToolList.length()];
                 for (int i = 0; i < jaToolList.length(); i++) {
                     jo = jaToolList.getJSONObject(i);
-                    farmTools【i】 = new FarmTool();
-                    farmTools【i】.toolId = jo.optString("toolId", "");
-                    farmTools【i】.toolType = ToolType.valueOf(jo.getString("toolType"));
-                    farmTools【i】.toolCount = jo.getInt("toolCount");
-                    farmTools【i】.toolHoldLimit = jo.optInt("toolHoldLimit", 20);
+                    farmTools[i] = new FarmTool();
+                    farmTools[i].toolId = jo.optString("toolId", "");
+                    farmTools[i].toolType = ToolType.valueOf(jo.getString("toolType"));
+                    farmTools[i].toolCount = jo.getInt("toolCount");
+                    farmTools[i].toolHoldLimit = jo.optInt("toolHoldLimit", 20);
                 }
             } else {
                 Log.recordLog(memo, s);
@@ -1105,33 +1105,33 @@ public class AntFarm {
             if (subFarmVO.has("rewardList")) {
                 JSONArray jaRewardList = subFarmVO.getJSONArray("rewardList");
                 if (jaRewardList.length() > 0) {
-                    rewardList = new RewardFriend【jaRewardList.length()】;
+                    rewardList = new RewardFriend[jaRewardList.length()];
                     for (int i = 0; i < rewardList.length; i++) {
                         JSONObject joRewardList = jaRewardList.getJSONObject(i);
-                        if (rewardList【i】 == null)
-                            rewardList【i】 = new RewardFriend();
-                        rewardList【i】.consistencyKey = joRewardList.getString("consistencyKey");
-                        rewardList【i】.friendId = joRewardList.getString("friendId");
-                        rewardList【i】.time = joRewardList.getString("time");
+                        if (rewardList[i] == null)
+                            rewardList[i] = new RewardFriend();
+                        rewardList[i].consistencyKey = joRewardList.getString("consistencyKey");
+                        rewardList[i].friendId = joRewardList.getString("friendId");
+                        rewardList[i].time = joRewardList.getString("time");
                     }
                 }
             }
             JSONArray jaAnimals = subFarmVO.getJSONArray("animals");
-            animals = new Animal【jaAnimals.length()】;
+            animals = new Animal[jaAnimals.length()];
             for (int i = 0; i < animals.length; i++) {
-                if (animals【i】 == null)
-                    animals【i】 = new Animal();
+                if (animals[i] == null)
+                    animals[i] = new Animal();
                 JSONObject animal = jaAnimals.getJSONObject(i);
-                animals【i】.animalId = animal.getString("animalId");
-                animals【i】.currentFarmId = animal.getString("currentFarmId");
-                animals【i】.masterFarmId = animal.getString("masterFarmId");
-                animals【i】.animalBuff = animal.getString("animalBuff");
-                animals【i】.subAnimalType = animal.getString("subAnimalType");
+                animals[i].animalId = animal.getString("animalId");
+                animals[i].currentFarmId = animal.getString("currentFarmId");
+                animals[i].masterFarmId = animal.getString("masterFarmId");
+                animals[i].animalBuff = animal.getString("animalBuff");
+                animals[i.subAnimalType = animal.getString("subAnimalType");
                 JSONObject animalStatusVO = animal.getJSONObject("animalStatusVO");
-                animals【i】.animalFeedStatus = animalStatusVO.getString("animalFeedStatus");
-                animals【i】.animalInteractStatus = animalStatusVO.getString("animalInteractStatus");
-                if (animals【i】.masterFarmId.equals(ownerFarmId))
-                    ownerAnimal = animals【i】;
+                animals[i].animalFeedStatus = animalStatusVO.getString("animalFeedStatus");
+                animals[i].animalInteractStatus = animalStatusVO.getString("animalInteractStatus");
+                if (animals[i].masterFarmId.equals(ownerFarmId))
+                    ownerAnimal = animals[i];
             }
         } catch (Throwable t) {
             Log.i(TAG, "parseSyncAnimalStatusResponse err:");
