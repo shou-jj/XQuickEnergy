@@ -1037,7 +1037,7 @@ public class AntForest {
                                 granted = true;
                                 // 20230724能量雨调整为列表中没有可赠送的好友则不赠送
                                 if ("SUCCESS".equals(joEnergyRainChance.getString("resultCode"))) {
-                                    Log.forest("送能量雨🌧️ 给【" + FriendIdMap.getNameById(userId) + "】送能量雨成功);
+                                    Log.forest("送能量雨🌧️ 给【" + FriendIdMap.getNameById(userId) + "】送能量雨成功");
                                     startEnergyRain();
                                 } else {
                                     Log.recordLog("送能量雨失败", joEnergyRainChance.toString());
