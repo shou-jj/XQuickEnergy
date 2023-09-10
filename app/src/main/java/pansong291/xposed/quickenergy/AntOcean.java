@@ -179,7 +179,7 @@ public class AntOcean {
                 JSONArray attachReward = reward.getJSONArray("attachRewardBOList");
 
                 if (attachReward.length() > 0) {
-                    Log.forest("神奇海洋🐳【清理海域垃圾】获得#【" + name + "】拼图");
+                    Log.forest("神奇海洋🐳【清理海域垃圾】获得#【海洋伙伴线索拼图1块】");
                     boolean canCombine = true;
                     for (int j = 0; j < attachReward.length(); j++) {
                         JSONObject detail = attachReward.getJSONObject(j);
