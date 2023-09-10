@@ -556,7 +556,7 @@ public class AntFarm {
                     if ("SUCCESS".equals(memo)) {
                         jo = jo.getJSONObject("donation");
                         harvestBenevolenceScore = jo.getDouble("harvestBenevolenceScore");
-                        Log.farm("鸡蛋捐赠❤️捐赠【" + activityName + "】项目#累计捐赠【" + jo.getInt("donationTimesStat") + "次】");
+                        Log.farm("鸡蛋捐赠❤️ 捐赠【" + activityName + "】项目#累计捐赠【" + jo.getInt("donationTimesStat") + "次】");
                         Statistics.donationEgg(userId);
                     } else {
                         Log.recordLog(memo, s);
@@ -688,7 +688,7 @@ public class AntFarm {
                         jo = awardInfos.getJSONObject(i);
                         award.append(jo.getString("awardName")).append("*").append(jo.getInt("awardCount"));
                     }
-                    Log.farm("庄园游戏🎮玩【" + gameType.gameName() + "】获得#【" + award + "】");
+                    Log.farm("庄园游戏🎮 玩【" + gameType.gameName() + "】获得#【" + award + "】");
                 } else {
                     Log.i(TAG, jo.toString());
                 }
