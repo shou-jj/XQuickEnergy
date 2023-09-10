@@ -82,7 +82,7 @@ public class AntMember {
                     s = AntMemberRpcCall.receivePointByUser(id);
                     jo = new JSONObject(s);
                     if ("SUCCESS".equals(jo.getString("resultCode"))) {
-                        Log.other("领取奖励🏆【" + bizTitle + "】#" + pointAmount + "积分");
+                        Log.other("领取奖励🏆【" + bizTitle + "】#【" + pointAmount + "】积分");
                     } else {
                         Log.recordLog(jo.getString("resultDesc"), s);
                     }
@@ -167,7 +167,7 @@ public class AntMember {
                             if (itemExchangeConsultDTO.getBoolean("canExchange") && userCurrentPoint >= pointAmount) {
                                 jo = new JSONObject(AntMemberRpcCall.exchange(itemId, pointAmount));
                                 if (jo.getBoolean("success")) {
-                                    Log.other("安 心 豆🥔【兑换" + exchangeDetail.getString("itemName") + "】");
+                                    Log.other("安 心 豆🥔 兑换【" + exchangeDetail.getString("itemName") + "】");
                                 } else {
                                     Log.recordLog("exchange", jo.toString());
                                 }
@@ -204,7 +204,7 @@ public class AntMember {
                                 String potentialSize = jo.getString("potentialSize");
                                 jo = new JSONObject(AntMemberRpcCall.collectCreditFeedback(creditFeedbackId));
                                 if (jo.getBoolean("success")) {
-                                    Log.other("收芝麻粒🙇🏻‍♂️【" + title + "】#" + potentialSize + "粒");
+                                    Log.other("收芝麻粒🙇🏻‍♂️【" + title + "】#【" + potentialSize + "粒】");
                                 } else {
                                     Log.recordLog(jo.getString("resultView"), jo.toString());
                                 }
@@ -293,7 +293,7 @@ public class AntMember {
                         JSONObject data = jo.getJSONObject("data");
                         int todayReward = data.getInt("todayReward");
                         String widgetName = data.getString("widgetName");
-                        Log.other("商家服务🏪【" + widgetName + "】#" + todayReward + "积分");
+                        Log.other("商家服务🏪【" + widgetName + "】#【" + todayReward + "积分】");
                     }
                 }
             } else {
