@@ -241,7 +241,7 @@ public class AntForest {
                                             AntForestRpcCall.antiepSign(signId, FriendIdMap.currentUid));
                                     if ("100000000".equals(resData2.getString("code"))) {
                                         collectedEnergy += awardCount;
-                                        Log.forest("过期能量💊 收取能量【" + awardCount + "g】");
+                                        Log.forest("过期能量💊 收取过期能量【" + awardCount + "g】");
                                         onForestEnd();
                                     }
                                 }
@@ -1529,7 +1529,7 @@ public class AntForest {
                 String propId = main.getJSONArray("propIdList").getString(0);
                 jo = new JSONObject(AntForestRpcCall.AnimalConsumeProp(propGroup, propId, propType));
                 if ("SUCCESS".equals(jo.getString("resultCode"))) {
-                    Log.forest("巡护派遣🐆派【" + name + "】去寻找能量");
+                    Log.forest("巡护派遣🐆 派【" + name + "】去寻找能量");
                     return true;
                 } else {
                     Log.i(TAG, jo.getString("resultDesc"));
