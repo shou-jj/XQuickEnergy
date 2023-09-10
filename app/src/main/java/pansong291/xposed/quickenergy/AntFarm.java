@@ -325,7 +325,7 @@ public class AntFarm {
                     s = AntFarmRpcCall.sleep();
                     jo = new JSONObject(s);
                     if ("SUCCESS".equals(jo.getString("memo"))) {
-                        Log.farm("小鸡睡觉🛌【到点睡觉】");
+                        Log.farm("小鸡睡觉🛌【到点睡觉】主人晚安");
                     }
                 }
             }
@@ -408,7 +408,7 @@ public class AntFarm {
             String memo = jo.getString("memo");
             if ("SUCCESS".equals(memo)) {
                 double foodHaveStolen = jo.getDouble("foodHaveStolen");
-                Log.farm("召回小鸡📣，偷吃【" + user + "】#" + foodHaveStolen + "g");
+                Log.farm("召回小鸡📣 在【" + user + "】的庄园偷吃饲料#【" + foodHaveStolen + "g】");
                 // 这里不需要加
                 // add2FoodStock((int)foodHaveStolen);
             } else {
@@ -449,7 +449,7 @@ public class AntFarm {
                             } else
                                 s = "胖揍小鸡👊【" + user + "】的小鸡躲开了攻击";
                         } else {
-                            s = "驱赶小鸡👋【" + user + "】";
+                            s = "驱赶小鸡👋 赶走【" + user + "】的小鸡";
                         }
                         Log.farm(s);
                     } else {
@@ -497,7 +497,7 @@ public class AntFarm {
                         jo = new JSONObject(s);
                         memo = jo.getString("memo");
                         if ("SUCCESS".equals(memo)) {
-                            Log.farm("领取道具🏆️️【" + taskTitle + "-" + toolType.nickName() + "】#" + awardCount + "张");
+                            Log.farm("领取道具🏆️️【" + taskTitle + "-" + toolType.nickName() + "】#【" + awardCount + "张】");
                         } else {
                             memo = memo.replace("道具", toolType.nickName());
                             Log.recordLog(memo, s);
@@ -521,7 +521,7 @@ public class AntFarm {
             if ("SUCCESS".equals(memo)) {
                 double harvest = jo.getDouble("harvestBenevolenceScore");
                 harvestBenevolenceScore = jo.getDouble("finalBenevolenceScore");
-                Log.farm("收取鸡蛋🥚【" + harvest + "颗】#剩余" + harvestBenevolenceScore + "颗");
+                Log.farm("收取鸡蛋🥚【" + harvest + "颗】#剩余【" + harvestBenevolenceScore + "颗】");
             } else {
                 Log.recordLog(memo, s);
             }
@@ -556,7 +556,7 @@ public class AntFarm {
                     if ("SUCCESS".equals(memo)) {
                         jo = jo.getJSONObject("donation");
                         harvestBenevolenceScore = jo.getDouble("harvestBenevolenceScore");
-                        Log.farm("鸡蛋捐赠❤️【" + activityName + "】#累计捐赠" + jo.getInt("donationTimesStat") + "次");
+                        Log.farm("鸡蛋捐赠❤️捐赠【" + activityName + "】项目#累计捐赠【" + jo.getInt("donationTimesStat") + "次】");
                         Statistics.donationEgg(userId);
                     } else {
                         Log.recordLog(memo, s);
@@ -619,8 +619,8 @@ public class AntFarm {
                                         } else {
                                             dadaDailySet.add(TimeUtil.getDateStr() + answer);
                                         }
-                                        Log.recordLog("答题" + (correct ? "正确" : "错误") + "可领取【"
-                                                + extInfo.getString("award") + "克】");
+                                        Log.farm("庄园答题✍️ 回答" + (correct ? "正确" : "错误") + "领取饲料【"
+                                                + extInfo.getString("award") + "g】");
                                         Statistics.answerQuestionToday(FriendIdMap.currentUid);
 
                                         JSONArray operationConfigList = joDailySubmit
@@ -823,7 +823,7 @@ public class AntFarm {
             if (!signed) {
                 JSONObject joSign = new JSONObject(AntFarmRpcCall.sign());
                 if ("SUCCESS".equals(joSign.getString("memo"))) {
-                    Log.farm("庄园签到📅获得饲料#【" + awardCount + "g】");
+                    Log.farm("庄园签到📅 获得饲料#【" + awardCount + "g】");
                 } else {
                     Log.i(TAG, joSign.toString());
                 }
@@ -1062,7 +1062,7 @@ public class AntFarm {
                         foodStock = (int) jo.getDouble("finalFoodStock");
                     else
                         add2FoodStock((int) rewardCount);
-                    Log.farm("通知好友💌【" + user + "】被偷吃#奖励" + rewardCount + "g");
+                    Log.farm("通知好友💌【" + user + "】的小鸡被偷吃#奖励【" + rewardCount + "g】");
                     return true;
                 } else {
                     Log.recordLog(memo, s);
@@ -1094,7 +1094,7 @@ public class AntFarm {
                                 AntFarmRpcCall.collectManurePot(manurePot.getString("manurePotNO")));
                         if (joManurePot.getBoolean("success")) {
                             int collectManurePotNum = joManurePot.getInt("collectManurePotNum");
-                            Log.farm("打扫鸡屎🧹获得肥料#【" + collectManurePotNum + "g】");
+                            Log.farm("打扫鸡屎🧹 获得肥料#【" + collectManurePotNum + "g】");
                         }
                     }
                 }
@@ -1159,7 +1159,7 @@ public class AntFarm {
                     if ("FINISHED".equals(orchardFoodMaterialStatus.optString("foodStatus"))) {
                         jo = new JSONObject(AntFarmRpcCall.farmFoodMaterialCollect());
                         if ("100".equals(jo.getString("resultCode"))) {
-                            Log.farm("小鸡厨房👨🏻‍🍳【领取农场食材】#" + jo.getInt("foodMaterialAddCount") + "g");
+                            Log.farm("小鸡厨房👨🏻‍🍳【领取农场食材】获得食材#【" + jo.getInt("foodMaterialAddCount") + "g】");
                         } else {
                             Log.i(TAG, jo.toString());
                         }
@@ -1168,7 +1168,7 @@ public class AntFarm {
                 if (canCollectDailyFoodMaterial) {
                     jo = new JSONObject(AntFarmRpcCall.collectDailyFoodMaterial(dailyFoodMaterialAmount));
                     if ("SUCCESS".equals(jo.getString("memo"))) {
-                        Log.farm("小鸡厨房👨🏻‍🍳【领取今日食材】#" + dailyFoodMaterialAmount + "g");
+                        Log.farm("小鸡厨房👨🏻‍🍳【领取今日食材】获得食材#【" + dailyFoodMaterialAmount + "g】");
                     } else {
                         Log.i(TAG, jo.toString());
                     }
@@ -1178,7 +1178,7 @@ public class AntFarm {
                 if (garbageAmount > 0) {
                     jo = new JSONObject(AntFarmRpcCall.collectKitchenGarbage());
                     if ("SUCCESS".equals(jo.getString("memo"))) {
-                        Log.farm("小鸡厨房👨🏻‍🍳【领取肥料】#" + jo.getInt("recievedKitchenGarbageAmount") + "g");
+                        Log.farm("小鸡厨房👨🏻‍🍳【领取肥料】#【" + jo.getInt("recievedKitchenGarbageAmount") + "g】");
                     } else {
                         Log.i(TAG, jo.toString());
                     }
@@ -1201,7 +1201,7 @@ public class AntFarm {
                     int dailyLimitedFoodMaterialAmount = jo.getInt("dailyLimitedFoodMaterialAmount");
                     jo = new JSONObject(AntFarmRpcCall.collectDailyLimitedFoodMaterial(dailyLimitedFoodMaterialAmount));
                     if ("SUCCESS".equals(jo.getString("memo"))) {
-                        Log.farm("小鸡厨房👨🏻‍🍳【领取爱心食材店食材】#" + dailyLimitedFoodMaterialAmount + "g");
+                        Log.farm("小鸡厨房👨🏻‍🍳【领取爱心食材店食材】获得食材#【" + dailyLimitedFoodMaterialAmount + "g】");
                     } else {
                         Log.i(TAG, jo.toString());
                     }
@@ -1259,7 +1259,7 @@ public class AntFarm {
                 jo = new JSONObject(AntFarmRpcCall.useFarmFood(cookbookId, cuisineId));
                 if ("SUCCESS".equals(jo.getString("memo"))) {
                     double deltaProduce = jo.getJSONObject("foodEffect").getDouble("deltaProduce");
-                    Log.farm("使用美食🍱【" + name + "】#加速" + deltaProduce + "颗爱心鸡蛋");
+                    Log.farm("使用美食🍱【" + name + "】#加速【" + deltaProduce + "】颗爱心鸡蛋");
                 } else {
                     Log.i(TAG, jo.toString());
                 }
@@ -1289,7 +1289,7 @@ public class AntFarm {
                         }
                         jo = new JSONObject(AntFarmRpcCall.drawLotteryPlus());
                         if ("SUCCESS".equals(jo.getString("memo"))) {
-                            Log.farm("惊喜礼包🎁【" + singleDesc + "*" + awardCount + "】");
+                            Log.farm("惊喜礼包🎁 获得【" + singleDesc + "*" + awardCount + "】");
                         } else {
                             Log.i(TAG, jo.getString("memo"));
                         }
@@ -1348,7 +1348,7 @@ public class AntFarm {
                     jo = new JSONObject(AntFarmRpcCall.visitFriend(farmId));
                     if ("SUCCESS".equals(jo.getString("memo"))) {
                         foodStock = jo.getInt("foodStock");
-                        Log.farm("赠送麦子🌾给【" + FriendIdMap.getNameById(userId) + "】赠送#" + jo.getInt("giveFoodNum") + "g");
+                        Log.farm("赠送麦子🌾 给【" + FriendIdMap.getNameById(userId) + "】赠送#【" + jo.getInt("giveFoodNum") + "g】麦子");
                         visitedTimes++;
                         if (jo.optBoolean("isReachLimit")) {
                             Log.recordLog("今日给【" + FriendIdMap.getNameById(userId) + "】送麦子已达上限", "");
@@ -1375,7 +1375,7 @@ public class AntFarm {
             JSONObject jo = new JSONObject(AntFarmRpcCall.acceptGift());
             if ("SUCCESS".equals(jo.getString("memo"))) {
                 int receiveFoodNum = jo.getInt("receiveFoodNum");
-                Log.farm("收取麦子🌾获得饲料#【" + receiveFoodNum + "g】");
+                Log.farm("收取麦子🌾 获得饲料#【" + receiveFoodNum + "g】");
             } else {
                 Log.i(TAG, jo.toString());
             }
@@ -1403,7 +1403,7 @@ public class AntFarm {
                         if ("SUCCESS".equals(jo.getString("memo"))) {
                             String prizeType = jo.getString("prizeType");
                             int prizeNum = jo.optInt("prizeNum", 0);
-                            Log.farm("贴贴小鸡💞获得#【" + prizeType + "*" + prizeNum + "】");
+                            Log.farm("贴贴小鸡💞 获得奖励#【" + prizeType + "*" + prizeNum + "】");
                         } else {
                             Log.i(jo.getString("memo"), jo.toString());
                         }
