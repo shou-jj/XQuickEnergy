@@ -411,7 +411,7 @@ public class AntForest {
                                 if (collected > 0) {
                                     totalCollected += collected;
                                     Statistics.addData(Statistics.DataType.COLLECTED, collected);
-                                    String msg = "收取金球🟡 获得【" + FriendIdMap.getNameById(userId) + "】的浇水能量#【" + collected + "g】";
+                                    String msg = "收取金球🟡 获得浇水能量#【" + collected + "g】";
                                     Log.forest(msg);
                                     AntForestToast.show(msg);
                                 } else {
