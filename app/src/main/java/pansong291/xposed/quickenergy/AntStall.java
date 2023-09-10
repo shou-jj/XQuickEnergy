@@ -645,7 +645,7 @@ public class AntStall {
         try {
             JSONObject jo = new JSONObject(s);
             if ("SUCCESS".equals(jo.getString("resultCode"))) {
-                Log.farm("蚂蚁新村🏡 给【" + FriendIdMap.getNameById(userId) + "】扔肥料");
+                Log.farm("蚂蚁新村🏡【扔肥料】");
             }
         } catch (Throwable th) {
             Log.i(TAG, "throwManure err:");
