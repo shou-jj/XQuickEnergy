@@ -287,7 +287,7 @@ public class AntOrchard {
                     String taskPlantType = jo.getString("taskPlantType");
                     jo = new JSONObject(AntOrchardRpcCall.triggerTbTask(taskId, taskPlantType));
                     if ("100".equals(jo.getString("resultCode"))) {
-                        Log.farm("领取奖励🏆【" + title + "】获得#【" + awardCount + "g】肥料");
+                        Log.farm("领取奖励🏆 完成【" + title + "】任务获得#【" + awardCount + "g】肥料");
                     } else {
                         Log.recordLog(jo.getString("resultDesc"), jo.toString());
                     }
