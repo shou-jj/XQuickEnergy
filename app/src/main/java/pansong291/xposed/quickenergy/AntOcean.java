@@ -465,7 +465,7 @@ public class AntOcean {
                     if (jo.getBoolean("success")) {
                         String taskTitle = bizInfo.optString("taskTitle", taskType);
                         String taskDesc = bizInfo.optString("taskDesc", taskType);
-                        Log.forest("领取奖励🏆【" + taskTitle + "】#" + taskDesc);
+                        Log.forest("领取奖励🏆 完成【" + taskTitle + "】任务获得#【" + taskDesc + "】");
                     } else {
                         Log.recordLog(jo.getString("desc"), jo.toString());
                     }
