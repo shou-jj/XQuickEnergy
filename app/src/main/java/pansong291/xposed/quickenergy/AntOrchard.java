@@ -258,7 +258,7 @@ public class AntOrchard {
                 if ("100".equals(joSign.getString("resultCode"))) {
                     int awardCount = joSign.getJSONObject("signTaskInfo").getJSONObject("currentSignItem")
                             .getInt("awardCount");
-                    Log.farm("农场签到📅获得肥料#" + awardCount + "g");
+                    Log.farm("农场签到📅 获得肥料#【" + awardCount + "g】");
                 } else {
                     Log.i(joSign.getString("resultDesc"), joSign.toString());
                 }
