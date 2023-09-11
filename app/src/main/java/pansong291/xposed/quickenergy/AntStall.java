@@ -100,7 +100,7 @@ public class AntStall {
                 s = AntStallRpcCall.shopSendBack(seatId);
                 jo = new JSONObject(s);
                 if ("SUCCESS".equals(jo.getString("resultCode"))) {
-                    Log.farm("蚂蚁新村🏡 请走【" + FriendIdMap.getNameById(shopUserId) + "】的小摊" + (amount > 0 ? "获得金币#【" + amount  + "】"));
+                    Log.farm("蚂蚁新村🏡 请走【" + FriendIdMap.getNameById(shopUserId) + "】的小摊" + (amount > 0 ? "获得金币#【" + amount : "】"));
 
                     inviteOpen(seatId);
                 } else {
