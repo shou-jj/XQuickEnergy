@@ -784,7 +784,7 @@ public class AntFarm {
                             memo = jo.getString("memo");
                             if ("SUCCESS".equals(memo)) {
                                 foodStock = jo.getInt("foodStock");
-                                Log.farm("领取奖励🏆️️【" + taskTitle + "】获得饲料#【" + jo.getInt("haveAddFoodStock") + "g】");
+                                Log.farm("领取奖励🏆️️ 完成【" + taskTitle + "】任务获得饲料#【" + jo.getInt("haveAddFoodStock") + "g】");
                                 if (unreceiveTaskAward > 0)
                                     unreceiveTaskAward--;
                             } else {
