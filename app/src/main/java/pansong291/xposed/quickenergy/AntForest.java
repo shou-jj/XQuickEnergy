@@ -411,7 +411,7 @@ public class AntForest {
                                 if (collected > 0) {
                                     totalCollected += collected;
                                     Statistics.addData(Statistics.DataType.COLLECTED, collected);
-                                    String msg = "收取金球🟡 获得浇水能量#【" + collected + "g】";
+                                    String msg = "收取金球🟡【获得浇水能量】#【" + collected + "g】";
                                     Log.forest(msg);
                                     AntForestToast.show(msg);
                                 } else {
@@ -466,7 +466,7 @@ public class AntForest {
                             String shortDay = extInfo.getString("shortDay");
                             jo = new JSONObject(AntForestRpcCall.collectAnimalRobEnergy(propId, propType, shortDay));
                             if ("SUCCESS".equals(jo.getString("resultCode"))) {
-                                Log.forest("动物巡护🦅 获得能量#【" + energy + "g】");
+                                Log.forest("动物巡护🦅【获得能量】#【" + energy + "g】");
                             } else {
                                 Log.recordLog("收取动物能量失败:" + jo.getString("resultDesc"), jo.toString());
                             }
@@ -897,7 +897,7 @@ public class AntForest {
                         if (!signRecord.getBoolean("signed")) {
                             JSONObject joSign = new JSONObject(AntForestRpcCall.vitalitySign());
                             if ("SUCCESS".equals(joSign.getString("resultCode")))
-                                Log.forest("森林签到📆 获得奖励#【活力值】");
+                                Log.forest("森林签到📆【获得奖励】#【活力值】");
                         }
                         break;
                     }
@@ -920,7 +920,7 @@ public class AntForest {
                         if (TaskStatus.FINISHED.name().equals(taskStatus)) {
                             JSONObject joAward = new JSONObject(AntForestRpcCall.receiveTaskAward(sceneCode, taskType));
                             if (joAward.getBoolean("success"))
-                                Log.forest("任务奖励🏆️ 完成任务【" + taskTitle + "】获得奖励#" + awardCount + "个");
+                                Log.forest("任务奖励🏆️ 完成【" + taskTitle + "】任务获得奖励#" + awardCount + "个");
                             else
                                 Log.recordLog("领取失败，" + s, joAward.toString());
                         } else if (TaskStatus.TODO.name().equals(taskStatus)) {
@@ -1002,7 +1002,7 @@ public class AntForest {
                 if ("SUCCESS".equals(
                         new JSONObject(AntForestRpcCall.energyRainSettlement(sum, token)).getString("resultCode"))) {
                     AntForestToast.show("获得【能量雨】能量#【" + sum + "g】");
-                    Log.forest("收能量雨🌧️ 获得能量#【" + sum + "g】");
+                    Log.forest("收能量雨🌧️【获得能量】#【" + sum + "g】");
                 }
             }
         } catch (Throwable th) {
@@ -1273,7 +1273,7 @@ public class AntForest {
                             JSONObject animal = data.getJSONObject("animal");
                             String ecosystem = animal.getString("ecosystem");
                             String name = animal.getString("name");
-                            Log.forest("神奇物种🦕 在【" + ecosystem + "】中获得#【" + name+"】卡片");
+                            Log.forest("神奇物种🦕 在【" + ecosystem + "】中抽到#【" + name+"】卡片");
                         } else {
                             Log.i(TAG, jo.getString("resultDesc"));
                         }
@@ -1357,7 +1357,7 @@ public class AntForest {
                             JSONObject animal = useResult.getJSONObject("animal");
                             String ecosystem = animal.getString("ecosystem");
                             String name = animal.getString("name");
-                            Log.forest("使用道具🧰【" + propName + "】#" + ecosystem + "获得卡片#【" + name + "】");
+                            Log.forest("使用道具🧰【" + propName + "】#" + ecosystem + "抽到卡片#【" + name + "】");
                         } else {
                             Log.recordLog(jo.getString("resultDesc"), jo.toString());
                         }
@@ -1458,7 +1458,7 @@ public class AntForest {
                     if (animalProp != null) {
                         JSONObject animal = animalProp.optJSONObject("animal");
                         if (animal != null) {
-                            Log.forest("巡护森林🏇🏻 获得#【" + animal.getString("name")+"】碎片");
+                            Log.forest("巡护森林🏇🏻【获得碎片】#【" + animal.getString("name"));
                         }
                     }
                 }
