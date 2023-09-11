@@ -100,7 +100,7 @@ public class AntStall {
                 s = AntStallRpcCall.shopSendBack(seatId);
                 jo = new JSONObject(s);
                 if ("SUCCESS".equals(jo.getString("resultCode"))) {
-                    Log.farm("蚂蚁新村🏡 请走【" + FriendIdMap.getNameById(shopUserId) + "】的小摊" + (amount > 0 ? "获得金币#【" + amount : "" + "】"));
+                    Log.farm("蚂蚁新村🏡 请走【" + FriendIdMap.getNameById(shopUserId) + "】的小摊" + (amount > 0 ? "获得金币#【" + amount  + "】"));
 
                     inviteOpen(seatId);
                 } else {
@@ -291,7 +291,7 @@ public class AntStall {
         try {
             JSONObject jo = new JSONObject(s);
             if ("SUCCESS".equals(jo.getString("resultCode"))) {
-                Log.farm("蚂蚁新村🏡 在【" + FriendIdMap.getNameById(userId) + "】家摆摊");
+                Log.farm("蚂蚁新村🏡 去【" + FriendIdMap.getNameById(userId) + "】的新村摆摊");
                 shopIds.poll();
             }
         } catch (Throwable t) {
@@ -340,7 +340,7 @@ public class AntStall {
                 s = AntStallRpcCall.shopClose(shopId);
                 jo = new JSONObject(s);
                 if ("SUCCESS".equals(jo.getString("resultCode"))) {
-                    Log.farm("蚂蚁新村🏡 收取在【" + FriendIdMap.getNameById(userId) + "】的摊位获得金币#【" + income.getString("amount") + "】");
+                    Log.farm("蚂蚁新村🏡 收摊在【" + FriendIdMap.getNameById(userId) + "】的摊位获得金币#【" + income.getString("amount") + "】");
                 } else {
                     Log.recordLog("shopClose err:", s);
                 }
