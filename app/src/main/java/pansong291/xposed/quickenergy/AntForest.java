@@ -1312,7 +1312,7 @@ public class AntForest {
                             JSONObject joAward = new JSONObject(
                                     AntForestRpcCall.antdodoReceiveTaskAward(sceneCode, taskType));
                             if (joAward.getBoolean("success"))
-                                Log.forest("任务奖励🏆️️【" + taskTitle + "】#" + awardCount + "个");
+                                Log.forest("任务奖励🏆️️ 完成【" + taskTitle + "】任务获得奖励#" + awardCount + "个");
                             else
                                 Log.recordLog("领取失败，" + s, joAward.toString());
                         } else if (TaskStatus.TODO.name().equals(taskStatus)) {
