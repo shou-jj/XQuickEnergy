@@ -82,7 +82,7 @@ public class AntMember {
                     s = AntMemberRpcCall.receivePointByUser(id);
                     jo = new JSONObject(s);
                     if ("SUCCESS".equals(jo.getString("resultCode"))) {
-                        Log.other("领取奖励🏆【" + bizTitle + "】#【" + pointAmount + "】积分");
+                        Log.other("领取奖励🏆 完成【" + bizTitle + "】任务获得#【" + pointAmount + "】积分");
                     } else {
                         Log.recordLog(jo.getString("resultDesc"), s);
                     }
