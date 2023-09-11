@@ -1458,7 +1458,7 @@ public class AntForest {
                     if (animalProp != null) {
                         JSONObject animal = animalProp.optJSONObject("animal");
                         if (animal != null) {
-                            Log.forest("巡护森林🏇🏻【获得碎片】#【" + animal.getString("name") + "】");
+                            Log.forest("巡护森林🏇🏻 获得#【" + animal.getString("name") + "】动物碎片");
                         }
                     }
                 }
