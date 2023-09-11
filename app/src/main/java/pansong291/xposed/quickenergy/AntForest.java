@@ -928,7 +928,7 @@ public class AntForest {
                                 JSONObject joFinishTask = new JSONObject(
                                         AntForestRpcCall.finishTask(sceneCode, taskType));
                                 if (joFinishTask.getBoolean("success")) {
-                                    Log.forest("森林任务🧾️ 领取任务【" + taskTitle + "】");
+                                    Log.forest("森林任务🧾️【领取任务】#【" + taskTitle + "】");
                                     doubleCheck = true;
                                 } else {
                                     Log.recordLog("完成任务失败，" + taskTitle);
@@ -1458,7 +1458,7 @@ public class AntForest {
                     if (animalProp != null) {
                         JSONObject animal = animalProp.optJSONObject("animal");
                         if (animal != null) {
-                            Log.forest("巡护森林🏇🏻【获得碎片】#【" + animal.getString("name"));
+                            Log.forest("巡护森林🏇🏻【获得碎片】#【" + animal.getString("name") + "】");
                         }
                     }
                 }
