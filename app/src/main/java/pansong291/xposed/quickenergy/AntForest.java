@@ -589,8 +589,8 @@ public class AntForest {
                                     if ("SUCCESS".equals(joProtect.getString("resultCode"))) {
                                         int vitalityAmount = joProtect.optInt("vitalityAmount", 0);
                                         int fullEnergy = wateringBubble.optInt("fullEnergy", 0);
-                                        String str = "复活能量🚑【" + FriendIdMap.getNameById(userId) + "】#" + fullEnergy
-                                                + "g" + (vitalityAmount > 0 ? "#活力值+" + vitalityAmount : "");
+                                        String str = "复活能量🚑【" + FriendIdMap.getNameById(userId) + "】#过期能量【" + fullEnergy
+                                                + "g】" + (vitalityAmount > 0 ? "#活力值+" + vitalityAmount : "");
                                         Log.forest(str);
                                         totalHelpCollected += fullEnergy;
                                         Statistics.addData(Statistics.DataType.HELPED, fullEnergy);
