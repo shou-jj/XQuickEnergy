@@ -134,7 +134,7 @@ public class Reserve {
                     int vitalityAmount = jo.optInt("vitalityAmount",0);
                     appliedTimes = Statistics.getReserveTimes(projectId) + 1;
                     String str = "领保护地⛳️【" + itemName + "】#第" + appliedTimes + "次"
-                            + (vitalityAmount > 0 ? "-活力值+" + vitalityAmount : "");
+                            + (vitalityAmount > 0 ? "-获得奖励【活力值+" + vitalityAmount + "】" : "");
                     Log.forest(str);
                     Statistics.reserveToday(projectId, 1);
                 } else {
@@ -263,7 +263,7 @@ public class Reserve {
                     }
                     appliedTimes = Statistics.getBeachTimes(cultivationCode) + 1;
                     String str = "净滩行动🏖️【" + itemName + "】#第" + appliedTimes + "次"
-                            + "-获得奖励" + award;
+                            + "-获得奖励【" + award + "】";
                     Log.forest(str);
                     Statistics.beachRecord(cultivationCode, 1);
                 } else {
