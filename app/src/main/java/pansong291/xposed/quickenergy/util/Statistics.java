@@ -206,18 +206,18 @@ public class Statistics {
     public static String getText() {
         statistics = null;
         Statistics stat = getStatistics();
-        StringBuilder sb = new StringBuilder(getData(TimeType.YEAR, DataType.TIME) + "年 : 收 ");
+        StringBuilder sb = new StringBuilder(getData(TimeType.YEAR, DataType.TIME) + "年 : 收【");
         sb.append(getData(TimeType.YEAR, DataType.COLLECTED));
-        sb.append(",   帮 ").append(getData(TimeType.YEAR, DataType.HELPED));
-        sb.append(",   浇 ").append(getData(TimeType.YEAR, DataType.WATERED));
-        sb.append("\n").append(getData(TimeType.MONTH, DataType.TIME)).append("月 : 收 ");
+        sb.append("】,帮【").append(getData(TimeType.YEAR, DataType.HELPED));
+        sb.append("】,浇【").append(getData(TimeType.YEAR, DataType.WATERED));
+        sb.append("】\n\n").append(getData(TimeType.MONTH, DataType.TIME)).append("月 : 收【");
         sb.append(getData(TimeType.MONTH, DataType.COLLECTED));
-        sb.append(",   帮 ").append(getData(TimeType.MONTH, DataType.HELPED));
-        sb.append(",   浇 ").append(getData(TimeType.MONTH, DataType.WATERED));
-        sb.append("\n").append(getData(TimeType.DAY, DataType.TIME)).append("日 : 收 ");
+        sb.append("】,帮【").append(getData(TimeType.MONTH, DataType.HELPED));
+        sb.append("】,浇【").append(getData(TimeType.MONTH, DataType.WATERED));
+        sb.append("】\n\n").append(getData(TimeType.DAY, DataType.TIME)).append("日 : 收【");
         sb.append(getData(TimeType.DAY, DataType.COLLECTED));
-        sb.append(",   帮 ").append(getData(TimeType.DAY, DataType.HELPED));
-        sb.append(",   浇 ").append(getData(TimeType.DAY, DataType.WATERED));
+        sb.append("】,帮【").append(getData(TimeType.DAY, DataType.HELPED));
+        sb.append("】,浇【").append(getData(TimeType.DAY, DataType.WATERED) + "】");
         if (stat.questionHint != null && !stat.questionHint.isEmpty()) {
             sb.append("\nquestion hint : ").append(stat.questionHint);
         }
