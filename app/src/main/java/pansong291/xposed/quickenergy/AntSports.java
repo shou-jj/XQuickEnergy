@@ -373,7 +373,7 @@ public class AntSports {
                         JSONObject donateExchangeResultModel = jo.getJSONObject("donateExchangeResultModel");
                         int userCount = donateExchangeResultModel.getInt("userCount");
                         double amount = donateExchangeResultModel.getJSONObject("userAmount").getDouble("amount");
-                        Log.other("捐出活动❤️【" + userCount + "步】#兑换【" + amount + "元】公益金");
+                        Log.other("捐出步数❤️【" + userCount + "步】#兑换【" + amount + "元】公益金");
                         Statistics.exchangeToday(FriendIdMap.currentUid);
 
                     } else if (s.contains("已捐步")) {
