@@ -1397,7 +1397,7 @@ public class AntForest {
                     for (int j = 0; j < count; j++) {
                         jo = new JSONObject(AntForestRpcCall.antdodoSocial(animalId, targetUser));
                         if ("SUCCESS".equals(jo.getString("resultCode"))) {
-                            Log.forest("赠送卡片🦕[" + FriendIdMap.getNameById(targetUser) + "]#" + ecosystem + "-" + name);
+                            Log.forest("赠送卡片🦕 给【" + FriendIdMap.getNameById(targetUser) + "】赠送#" + ecosystem + "-【" + name + "】");
                         } else {
                             Log.i(TAG, jo.getString("resultDesc"));
                         }
