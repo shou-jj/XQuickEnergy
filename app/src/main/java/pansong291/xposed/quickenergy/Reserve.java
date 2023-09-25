@@ -237,11 +237,9 @@ public class Reserve {
                         }
                     } else {
                         Log.forest("净滩行动🏖️【" + jo.getString("cultivationName") + "】#能量不足停止申请");
-                        return false;
                     }
                 } else {
                     Log.forest("净滩行动🏖️【" + jo.getString("cultivationName") + "】#似乎没有了");
-                    return false;
                 }
             } else {
                 Log.recordLog(jo.getString("resultDesc"), s);
