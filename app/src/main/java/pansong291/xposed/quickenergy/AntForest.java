@@ -1442,20 +1442,20 @@ public class AntForest {
     private static void queryUserPatrol() {
         try {
             JSONObject jo = new JSONObject(AntForestRpcCall.queryUserPatrol());
-            if ("SUCCESS".equals(jo.getString("resultCode"))) {
-                JSONObject resData = new JSONObject(AntForestRpcCall.queryMyPatrolRecord());
-                if (resData.optBoolean("canSwitch")) {
-                    JSONArray records = resData.getJSONArray("records");
-                    for (int i = 0; i < records.length(); i++) {
-                        JSONObject record = records.getJSONObject(i);
-                        JSONObject userPatrol = record.getJSONObject("userPatrol");
-                        if (userPatrol.getInt("unreachedNodeCount") > 0) {
-                            if ("silent".equals(userPatrol.getString("mode"))) {
-                                JSONObject patrolConfig = record.getJSONObject("patrolConfig");
-                                String patrolId = patrolConfig.getString("patrolId");
-                                resData = new JSONObject(AntForestRpcCall.switchUserPatrol(patrolId));
-                                if ("SUCCESS".equals(resData.getString("resultCode"))) {
-                                    Log.forest("巡逻⚖️-切换地图至" + patrolId);
+            //if ("SUCCESS".equals(jo.getString("resultCode"))) {
+                //JSONObject resData = new JSONObject(AntForestRpcCall.queryMyPatrolRecord());
+                //if (resData.optBoolean("canSwitch")) {
+                    //JSONArray records = resData.getJSONArray("records");
+                    //for (int i = 0; i < records.length(); i++) {
+                        //JSONObject record = records.getJSONObject(i);
+                        //JSONObject userPatrol = record.getJSONObject("userPatrol");
+                        //if (userPatrol.getInt("unreachedNodeCount") > 0) {
+                            //if ("silent".equals(userPatrol.getString("mode"))) {
+                                //JSONObject patrolConfig = record.getJSONObject("patrolConfig");
+                                //String patrolId = patrolConfig.getString("patrolId");
+                                //resData = new JSONObject(AntForestRpcCall.switchUserPatrol(patrolId));
+                                //if ("SUCCESS".equals(resData.getString("resultCode"))) {
+                                    //Log.forest("巡护森林🏇🏻 切换地图至【" + patrolId + "】");
                                 }
                                 queryUserPatrol();
                                 return;
