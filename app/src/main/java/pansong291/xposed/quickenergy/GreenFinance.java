@@ -31,7 +31,7 @@ public class GreenFinance {
             JSONObject joSelfCollect = new JSONObject(s);
             if (joSelfCollect.getBoolean("success")) {
                 int totalCollectPoint = joSelfCollect.getJSONObject("result").getInt("totalCollectPoint");
-                Log.other("绿色经营📊收集获得" + totalCollectPoint);
+                Log.other("绿色经营📊收集获得【" + totalCollectPoint + "】");
             } else {
                 Log.i(TAG + ".batchSelfCollect", s);
             }
