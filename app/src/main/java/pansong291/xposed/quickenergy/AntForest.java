@@ -728,7 +728,7 @@ public class AntForest {
                     FriendManager.friendWatch(userId, collected);
                     totalCollected += collected;
                     Statistics.addData(Statistics.DataType.COLLECTED, collected);
-                    String str = "收取能量🪂[" + FriendIdMap.getNameById(userId) + "]#" + collected + "g"
+                    String str = "收取能量🟢 偷取【" + FriendIdMap.getNameById(userId) + "】的能量#【" + collected + "g】"
                             + (StringUtil.isEmpty(extra) ? "" : "[" + extra + "]");
                     Log.forest(str);
                     AntForestToast.show(str);
