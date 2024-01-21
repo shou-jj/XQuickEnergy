@@ -105,8 +105,8 @@ public class AntOcean {
                                 JSONObject retBubble = retBubbles.optJSONObject(j);
                                 if (retBubble != null) {
                                     int collectedEnergy = retBubble.getInt("collectedEnergy");
-                                    Log.forest("神奇海洋🐳 收取【" + FriendIdMap.getNameById(userId) + "】的海洋能量#"
-                                            + collectedEnergy + "g");
+                                    Log.forest("神奇海洋🐳 收取【" + FriendIdMap.getNameById(userId) + "】的海洋能量#【"
+                                            + collectedEnergy + "g】");
                                 }
                             }
                         }
