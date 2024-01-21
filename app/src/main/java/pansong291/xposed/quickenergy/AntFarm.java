@@ -672,7 +672,7 @@ public class AntFarm {
                                         } else {
                                             dadaDailySet.add(TimeUtil.getDateStr() + answer);
                                         }
-                                        Log.recordLog("庄园答题✍️【答题" + (correct ? "正确】" : "错误】") + "#获得饲料【"
+                                        Log.farm("庄园答题✍️【答题" + (correct ? "正确】" : "错误】") + "#获得饲料【"
                                                 + extInfo.getString("award") + "克】");
                                         Statistics.answerQuestionToday(FriendIdMap.getCurrentUid());
 
