@@ -343,7 +343,7 @@ public class AntFarm {
                                     jo = new JSONObject(s);
                                     if ("SUCCESS".equals(jo.getString("memo"))) {
                                         String prizeName = jo.getString("prizeName");
-                                        Log.farm("小鸡到访🍖" + prizeName);
+                                        Log.farm("小鸡到访🍖 获得#【" + prizeName + "】");
                                     } else {
                                         Log.i(TAG, "visitAnimalSendPrize err:" + s);
                                         Log.i(TAG, s);
