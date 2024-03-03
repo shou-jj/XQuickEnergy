@@ -420,7 +420,7 @@ public class AntFarm {
             String memo = jo.getString("memo");
             if ("SUCCESS".equals(memo)) {
                 double foodHaveStolen = jo.getDouble("foodHaveStolen");
-                Log.farm("召回小鸡📣，偷吃[" + user + "]#" + foodHaveStolen + "g");
+                Log.farm("召回小鸡📣偷吃[" + user + "]#" + foodHaveStolen + "g");
                 // 这里不需要加
                 // add2FoodStock((int)foodHaveStolen);
             } else {
@@ -631,8 +631,8 @@ public class AntFarm {
                                         } else {
                                             dadaDailySet.add(TimeUtil.getDateStr() + answer);
                                         }
-                                        Log.farm("答题" + (correct ? "正确✍️" : "错误✍️") + "可领取［"
-                                                + extInfo.getString("award") + "克］");
+                                        Log.farm("庄园答题✍️[答题" + (correct ? "正确]" : "错误]") + "获得饲料#"
+                                                + extInfo.getString("award") + "g");
                                         Statistics.answerQuestionToday(FriendIdMap.getCurrentUid());
 
                                         JSONArray operationConfigList = joDailySubmit
@@ -846,7 +846,7 @@ public class AntFarm {
             if (!signed) {
                 JSONObject joSign = new JSONObject(AntFarmRpcCall.sign());
                 if ("SUCCESS".equals(joSign.getString("memo"))) {
-                    Log.farm("庄园签到📅获得饲料" + awardCount + "g");
+                    Log.farm("庄园签到📅[获得饲料]#" + awardCount + "g");
                 } else {
                     Log.i(TAG, joSign.toString());
                 }
